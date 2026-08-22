@@ -1,0 +1,2723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="凌介科技 Lynjex — 全球增长伙伴，让增长连接全球。专注于企业海外市场拓展，提供全球化独立站、SEO/GEO、搜索广告、海外社媒广告到品牌推广与获客体系搭建的一站式增长服务。">
+    <title>凌介科技 Lynjex | Global Growth Partner — 让增长连接全球</title><style>
+        /* ========== Reset & Base ========== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0052FF;
+            --primary-light: #3B82F6;
+            --primary-dark: #0033B0;
+            --primary-50: #EFF6FF;
+            --accent: #00C896;
+            --accent-light: #34D399;
+            --dark: #0A0E1A;
+            --dark-2: #111827;
+            --dark-3: #1E293B;
+            --gray-1: #F8FAFC;
+            --gray-2: #E2E8F0;
+            --gray-3: #94A3B8;
+            --gray-4: #64748B;
+            --gray-5: #475569;
+            --white: #FFFFFF;
+            --radius: 16px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+            --shadow-xl: 0 24px 60px rgba(0,0,0,0.15);
+            --gradient-primary: linear-gradient(135deg, #0052FF 0%, #3B82F6 50%, #00C896 100%);
+            --gradient-hero: linear-gradient(135deg, #0A0E1A 0%, #111827 40%, #0A1530 100%);
+            --gradient-card: linear-gradient(135deg, rgba(0,82,255,0.06) 0%, rgba(0,200,150,0.04) 100%);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --container: 1200px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            position: relative;
+            padding: 100px 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 64px 0;
+            }
+        }
+
+        /* ========== Scroll Reveal ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== Section Header ========== */
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+        .section-tag::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-4);
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        /* ========== Navigation ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            transition: var(--transition);
+        }
+        .nav.scrolled {
+            box-shadow: var(--shadow);
+            border-color: transparent;
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+        .nav-logo-mark {
+            height: 48px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .nav-logo-mark img {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .nav-logo-text small {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--gray-3);
+            letter-spacing: 0.05em;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-menu a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-5);
+            transition: var(--transition);
+            position: relative;
+        }
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        .nav-cta {
+            padding: 10px 24px;
+            background: var(--dark);
+            color: white !important;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-cta:hover {
+            background: var(--primary);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(0, 82, 255, 0.3);
+        }
+        .nav-cta::after {
+            display: none;
+        }
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 900px) {
+            .nav-menu {
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 24px;
+                border-bottom: 1px solid var(--gray-2);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+            }
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .nav-menu a {
+                padding: 14px 0;
+                border-bottom: 1px solid var(--gray-1);
+            }
+            .nav-menu a:last-child {
+                border-bottom: none;
+            }
+            .nav-cta {
+                margin-top: 12px;
+                display: inline-flex;
+                border-bottom: none !important;
+            }
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        /* ========== Hero ========== */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .hero-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+        }
+        .hero-glow-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--primary);
+            top: -200px;
+            right: -150px;
+            animation: float-glow 8s ease-in-out infinite;
+        }
+        .hero-glow-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            bottom: -150px;
+            left: -100px;
+            animation: float-glow 8s ease-in-out infinite 4s;
+        }
+        .hero-glow-3 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary-light);
+            top: 40%;
+            left: 30%;
+            opacity: 0.08;
+            animation: float-glow 10s ease-in-out infinite 2s;
+        }
+        @keyframes float-glow {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.05); }
+        }
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 100px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+            backdrop-filter: blur(10px);
+        }
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.3); }
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: white;
+            margin-bottom: 24px;
+            max-width: 900px;
+        }
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #34D399, #60A5FA);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 640px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-primary {
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 24px rgba(0, 82, 255, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 82, 255, 0.45);
+            background: var(--primary-dark);
+        }
+        .btn-secondary {
+            padding: 16px 32px;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 64px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-num {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            background: linear-gradient(135deg, #3B82F6, #34D399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 32px;
+            }
+            .hero-stat-num {
+                font-size: 2rem;
+            }
+        }
+
+        /* ========== Section: About ========== */
+        .about {
+            background: var(--white);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        .about-text h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        .about-text p {
+            color: var(--gray-4);
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+        .about-text .highlight-text {
+            color: var(--dark);
+            font-weight: 600;
+        }
+        .about-visual {
+            position: relative;
+            height: 460px;
+            border-radius: var(--radius-lg);
+            background: var(--gradient-hero);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(59,130,246,0.2), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0,200,150,0.15), transparent 40%);
+        }
+        .about-globe {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-globe::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255,255,255,0.08);
+            transform: scale(1.15);
+        }
+        .about-globe::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255,255,255,0.05);
+            transform: scale(1.3);
+        }
+        .about-globe-text {
+            text-align: center;
+            z-index: 2;
+        }
+        .about-globe-text .big-num {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #3B82F6, #34D399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        .about-globe-text .label {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+        .about-orbits {
+            position: absolute;
+            inset: 0;
+            animation: spin 30s linear infinite;
+        }
+        .about-orbits span {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 12px var(--accent);
+        }
+        .about-orbits span:nth-child(1) { top: 5%; left: 50%; }
+        .about-orbits span:nth-child(2) { top: 50%; right: 5%; background: var(--primary-light); box-shadow: 0 0 12px var(--primary-light); }
+        .about-orbits span:nth-child(3) { bottom: 5%; left: 50%; background: var(--primary); box-shadow: 0 0 12px var(--primary); }
+        .about-orbits span:nth-child(4) { top: 50%; left: 5%; background: var(--accent-light); box-shadow: 0 0 12px var(--accent-light); }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .about-facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .about-fact {
+            padding: 20px;
+            background: var(--gray-1);
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-2);
+            transition: var(--transition);
+        }
+        .about-fact:hover {
+            border-color: var(--primary-light);
+            background: var(--primary-50);
+            transform: translateY(-2px);
+        }
+        .about-fact-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .about-fact-label {
+            font-size: 0.8rem;
+            color: var(--gray-4);
+            margin-top: 6px;
+        }
+
+        /* ========== Brand Story ========== */
+        .brand-story {
+            background: var(--gray-1);
+        }
+        .brand-story-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .brand-story-header .section-tag {
+            justify-content: center;
+        }
+        .brand-story-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .brand-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .brand-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        .brand-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 48px 32px;
+            text-align: center;
+            border: 1px solid var(--gray-2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .brand-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .brand-card:hover::before {
+            opacity: 1;
+        }
+        .brand-card-zh {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .brand-card-pinyin {
+            font-size: 0.8rem;
+            color: var(--gray-3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+        }
+        .brand-card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+        .brand-card-desc {
+            font-size: 0.95rem;
+            color: var(--gray-4);
+            line-height: 1.7;
+        }
+        .brand-card-center {
+            background: var(--gradient-hero);
+            color: white;
+        }
+        .brand-card-center .brand-card-zh {
+            -webkit-text-fill-color: white;
+            font-size: 3.5rem;
+        }
+        .brand-card-center .brand-card-pinyin,
+        .brand-card-center .brand-card-title,
+        .brand-card-center .brand-card-desc {
+            color: rgba(255,255,255,0.8);
+        }
+        .brand-card-center .brand-card-title {
+            color: white;
+        }
+
+        /* ========== Philosophy ========== */
+        .philosophy {
+            background: var(--white);
+        }
+        .philosophy-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .philosophy-header .section-tag {
+            justify-content: center;
+        }
+        .philosophy-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .philosophy-header p {
+            color: var(--gray-4);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .philosophy-flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 48px;
+        }
+        .philosophy-flow-item {
+            padding: 12px 20px;
+            background: var(--gray-1);
+            border: 1px solid var(--gray-2);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark-2);
+            transition: var(--transition);
+        }
+        .philosophy-flow-item:hover {
+            background: var(--primary-50);
+            border-color: var(--primary-light);
+            color: var(--primary);
+        }
+        .philosophy-flow-arrow {
+            color: var(--gray-3);
+            align-self: center;
+            font-size: 1.2rem;
+        }
+        .philosophy-compare {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 32px;
+            align-items: stretch;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .philosophy-compare {
+                grid-template-columns: 1fr;
+            }
+            .philosophy-compare-arrow {
+                display: none;
+            }
+        }
+        .philosophy-side {
+            padding: 32px;
+            border-radius: var(--radius-lg);
+        }
+        .philosophy-side-left {
+            background: var(--gray-1);
+            border: 1px solid var(--gray-2);
+        }
+        .philosophy-side-right {
+            background: var(--gradient-hero);
+            color: white;
+        }
+        .philosophy-side-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .philosophy-side-left .philosophy-side-label {
+            color: var(--gray-3);
+        }
+        .philosophy-side-right .philosophy-side-label {
+            color: var(--accent);
+        }
+        .philosophy-side ul li {
+            padding: 10px 0;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .philosophy-side-left ul li {
+            color: var(--gray-4);
+            border-bottom: 1px solid var(--gray-2);
+        }
+        .philosophy-side-right ul li {
+            color: rgba(255,255,255,0.85);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .philosophy-side ul li::before {
+            font-size: 1.2rem;
+        }
+        .philosophy-side-left ul li::before {
+            content: '○';
+            color: var(--gray-3);
+        }
+        .philosophy-side-right ul li::before {
+            content: '●';
+            color: var(--accent);
+        }
+        .philosophy-compare-arrow {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            color: var(--gray-3);
+        }
+
+        /* ========== Changing Market ========== */
+        .market {
+            background: var(--gradient-hero);
+            color: white;
+            overflow: hidden;
+        }
+        .market-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        .market-header .section-tag {
+            justify-content: center;
+            color: var(--accent);
+        }
+        .market-header .section-tag::before {
+            background: var(--accent);
+        }
+        .market-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .market-header p {
+            color: rgba(255,255,255,0.5);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .market-old {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+        .market-old-item {
+            padding: 10px 24px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: line-through;
+            text-decoration-color: rgba(255,255,255,0.3);
+        }
+        .market-transition {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .market-transition-text {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #3B82F6, #34D399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 1000px) {
+            .market-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .market-card {
+            padding: 32px 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .market-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-4px);
+        }
+        .market-card-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 20px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.2);
+        }
+        .market-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .market-card p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+        .market-flow {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.08em;
+        }
+        .market-flow span {
+            color: var(--accent);
+        }
+
+        /* ========== Problems ========== */
+        .problems {
+            background: var(--white);
+        }
+        .problems-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .problems-header .section-tag {
+            justify-content: center;
+        }
+        .problems-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .problems-header p {
+            color: var(--gray-4);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 56px;
+        }
+        @media (max-width: 768px) {
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .problem-card {
+            padding: 36px;
+            background: var(--gray-1);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .problem-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+        .problem-card-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gray-2);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .problem-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .problem-card-desc {
+            color: var(--gray-4);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .problem-card-solution {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--gray-2);
+            text-align: center;
+        }
+        .problem-card-solution-badge {
+            flex-shrink: 0;
+            padding: 4px 12px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+        .problem-card-solution p {
+            font-size: 0.9rem;
+            color: var(--dark-2);
+            line-height: 1.6;
+        }
+        .problems-bottom {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .problems-bottom {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .problems-bottom-item {
+            text-align: center;
+            padding: 32px 20px;
+            border-radius: var(--radius);
+            background: var(--gradient-card);
+            border: 1px solid rgba(0,82,255,0.08);
+        }
+        .problems-bottom-item-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .problems-bottom-item h4 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .problems-bottom-item p {
+            font-size: 0.85rem;
+            color: var(--gray-4);
+        }
+
+        /* ========== Services ========== */
+        .services {
+            background: var(--gray-1);
+        }
+        .services-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        .services-header .section-tag {
+            justify-content: center;
+        }
+        .services-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .services-header p {
+            color: var(--gray-4);
+            font-size: 1.1rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            border: 1px solid var(--gray-2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 0;
+        }
+        .service-card:hover::before {
+            opacity: 0.03;
+        }
+        .service-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        .service-card-num {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gray-3);
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+        }
+        .service-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 20px rgba(0, 82, 255, 0.2);
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .service-card-subtitle {
+            font-size: 0.95rem;
+            color: var(--gray-4);
+            margin-bottom: 24px;
+        }
+        .service-card ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .service-card ul li {
+            font-size: 0.88rem;
+            color: var(--gray-5);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .service-card ul li::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--primary);
+            flex-shrink: 0;
+        }
+        .service-card-tagline {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-2);
+        }
+
+        /* ========== Methodology ========== */
+        .methodology {
+            background: var(--white);
+        }
+        .methodology-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        .methodology-header .section-tag {
+            justify-content: center;
+        }
+        .methodology-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .methodology-header p {
+            color: var(--gray-4);
+            font-size: 1.1rem;
+        }
+        .methodology-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .methodology-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            position: relative;
+        }
+        .methodology-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 27px;
+            top: 56px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-light), var(--gray-2));
+        }
+        .methodology-step-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(0, 82, 255, 0.25);
+            z-index: 1;
+            transition: var(--transition);
+        }
+        .methodology-step:hover .methodology-step-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(0, 82, 255, 0.35);
+        }
+        .methodology-step-content {
+            padding-bottom: 32px;
+            flex: 1;
+        }
+        .methodology-step-content h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .methodology-step-content p {
+            font-size: 0.9rem;
+            color: var(--gray-4);
+        }
+
+        /* ========== Industries ========== */
+        .industries {
+            background: var(--gray-1);
+        }
+        .industries-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .industries-header .section-tag {
+            justify-content: center;
+        }
+        .industries-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .industry-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            border: 1px solid var(--gray-2);
+            transition: var(--transition);
+            overflow: hidden;
+            text-align: center;
+        }
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-light);
+        }
+        .industry-card-img {
+            width: calc(100% + 56px);
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            margin: -28px -28px 0;
+        }
+        .industry-card-body {
+            padding: 28px 0 0;
+        }
+        .industry-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--gradient-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin: 0 auto 20px;
+        }
+        .industry-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .industry-card-en {
+            font-size: 0.75rem;
+            color: var(--gray-3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+        .industry-card ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .industry-card ul li {
+            padding: 6px 14px;
+            background: var(--gray-1);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--gray-5);
+        }
+
+        /* ========== Team ========== */
+        .team {
+            background: var(--white);
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        .team-text h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+        .team-text p {
+            color: var(--gray-4);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .team-unis {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .team-unis span {
+            padding: 8px 20px;
+            background: var(--gray-1);
+            border: 1px solid var(--gray-2);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark-2);
+        }
+        .team-roles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .team-role {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--gray-5);
+            font-weight: 500;
+        }
+        .team-role::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            flex-shrink: 0;
+        }
+        .team-visual {
+            position: relative;
+            height: 420px;
+            border-radius: var(--radius-lg);
+            background: var(--gradient-hero);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .team-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 20%, rgba(59,130,246,0.15), transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0,200,150,0.1), transparent 50%);
+        }
+        .team-visual-content {
+            text-align: center;
+            z-index: 1;
+        }
+        .team-visual-content .label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+        .team-visual-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 0 32px;
+        }
+        .team-visual-grid-item {
+            padding: 20px 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .team-visual-grid-item:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.15);
+        }
+        .team-visual-grid-item .icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .team-visual-grid-item .name {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+        }
+
+        /* ========== Capabilities ========== */
+        .capabilities {
+            background: var(--gradient-hero);
+            color: white;
+        }
+        .capabilities-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .capabilities-header .section-tag {
+            justify-content: center;
+            color: var(--accent);
+        }
+        .capabilities-header .section-tag::before {
+            background: var(--accent);
+        }
+        .capabilities-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 1000px) {
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .capability-card {
+            padding: 32px 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .capability-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(52,211,153,0.2);
+            transform: translateY(-4px);
+        }
+        .capability-card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .capability-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .capability-card p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* ========== Mission ========== */
+        .mission {
+            background: var(--white);
+        }
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .mission-card {
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .mission-mission {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        .mission-vision {
+            background: var(--gradient-hero);
+            color: white;
+        }
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+        .mission-card::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+        }
+        .mission-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        .mission-card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+        }
+        .mission-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .mission-card p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .mission-assets {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 24px;
+        }
+        .mission-assets span {
+            padding: 10px 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+        }
+        .mission-assets span::before {
+            content: '✦';
+            color: var(--accent-light);
+        }
+
+        /* ========== CTA / Contact ========== */
+        .contact {
+            background: var(--gradient-hero);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(59,130,246,0.15), transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0,200,150,0.1), transparent 50%);
+        }
+        .contact > * {
+            position: relative;
+            z-index: 1;
+        }
+        .contact-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 100px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+        .contact h2 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+        .contact h2 .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #34D399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .contact p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .contact-info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 250px;
+            min-height: 280px;
+            padding: 36px 28px 32px;
+            background: linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            transition: var(--transition);
+        }
+        .contact-info-item:hover {
+            background: linear-gradient(160deg, rgba(255,255,255,0.15), rgba(255,255,255,0.06));
+            border-color: rgba(255,255,255,0.26);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+        }
+        .contact-info-item .icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3B82F6, #34D399);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+            box-shadow: 0 8px 20px rgba(59,130,246,0.35);
+        }
+        .contact-info-item .label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+        .contact-info-item .value {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.92);
+            word-break: break-all;
+            line-height: 1.5;
+        }
+        .contact-info-item .value a {
+            color: rgba(255,255,255,0.92);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-info-item .value a:hover {
+            color: #fff;
+        }
+        .contact-value-divider {
+            display: block;
+            width: 28px;
+            height: 1px;
+            background: rgba(255,255,255,0.22);
+            margin: 8px auto;
+        }
+        .contact-qr-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-qr {
+            width: 132px;
+            height: 132px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.95);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            display: block;
+        }
+        .contact-qr-hint {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.6);
+        }
+        .contact-services {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .contact-services span {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ========== Footer ========== */
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.6);
+            padding: 64px 0 32px;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        @media (max-width: 768px) {
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+        }
+        .footer-brand .nav-logo {
+            margin-bottom: 16px;
+        }
+        .footer-brand .nav-logo-mark {
+            background: transparent;
+        }
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .footer-brand .tagline {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .footer-col h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        .footer-col ul li a {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.5);
+            transition: var(--transition);
+        }
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 32px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+        .footer-bottom-right {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ========== Scroll Progress ========== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* ========== Back to top ========== */
+        .back-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--dark);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+            border: none;
+        }
+        .back-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .back-top:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .back-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-logo">
+                <div class="nav-logo-mark"><img src="L&J.png" alt="凌介科技 Lynjex"></div>
+                <div class="nav-logo-text">
+                    凌介科技
+                    <small>LYNJEX · GLOBAL GROWTH PARTNER</small>
+                </div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#services-new">产品服务</a></li>
+                <li><a href="#industries-exp">行业经验</a></li>
+                <li><a href="#industries">关于我们</a></li>
+                <li><a href="#contact" class="nav-cta">免费诊断 →</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+            <div class="hero-glow hero-glow-3"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="container hero-inner">
+            <div class="hero-badge reveal">
+                <div class="hero-badge-dot"></div>
+                Global Growth Partner · 全球增长伙伴
+            </div>
+            <h1 class="reveal">
+                让增长<span class="gradient-text">连接全球</span>
+            </h1>
+            <p class="reveal">
+                凌介科技专注于企业海外市场拓展，为中国制造企业、外贸企业及 B2B 品牌提供从全球化独立站、SEO/GEO、搜索广告、海外社媒广告到品牌推广与获客体系搭建的一站式增长服务。
+            </p>
+            <div class="hero-actions reveal">
+                <a href="#contact" class="btn-primary">
+                    获取免费海外增长诊断 →
+                </a>
+                <a href="#industries" class="btn-secondary">
+                    View Our Solutions
+                </a>
+            </div>
+            <div class="hero-stats reveal">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">To B</div>
+                    <div class="hero-stat-label">专注B2B全球增长</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-count="30">0</div>
+                    <div class="hero-stat-label">覆盖行业</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-count="40">0</div>
+                    <div class="hero-stat-label">全球布局</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Services -->
+    <section class="industries" id="services-new" style="background: var(--white);">
+        <div class="container">
+            <div class="industries-header reveal">
+                <h2>产品服务体系</h2>
+                <p>Product & Service System — 从建站到推广，一站式出海获客解决方案</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">🌐</div>
+                    <h3>多语言独立站建设</h3>
+                    <div class="industry-card-en">Multilingual Website</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">AI 友好型架构，支持英语、俄语、西语等主流语言，打造高转化的品牌官网。</p>
+                    <ul style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">多语言</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">AI 友好</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">移动优先</li>
+                    </ul>
+                </div>
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">🔍</div>
+                    <h3>Google / Yandex SEO</h3>
+                    <div class="industry-card-en">Search Engine Optimization</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">覆盖主流搜索引擎，基于全意图内容体系，精准捕获海外采购商流量。</p>
+                    <ul style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">多引擎</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">全意图</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">AI 内容</li>
+                    </ul>
+                </div>
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">📱</div>
+                    <h3>海外社媒广告</h3>
+                    <div class="industry-card-en">FB / TikTok / LinkedIn / VK</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">针对各行业目标受众，在主流社媒平台进行差异化投放，实现品效合一。</p>
+                    <ul style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">多矩阵</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">精准定向</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">品效合一</li>
+                    </ul>
+                </div>
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">📊</div>
+                    <h3>SEO 陪跑服务</h3>
+                    <div class="industry-card-en">SEO Coaching Program</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">资深 SEO 顾问全程陪跑，从策略制定到执行落地，手把手帮你建立可持续的搜索流量增长体系。</p>
+                    <ul style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">1v1 陪跑</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">策略落地</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">数据驱动</li>
+                    </ul>
+                </div>
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">🤖</div>
+                    <h3>GEO 生成引擎优化</h3>
+                    <div class="industry-card-en">Generative Engine Optimization</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">针对 ChatGPT、Gemini 等 AI 搜索引擎优化品牌内容，让你在 AI 时代抢占流量先机。</p>
+                    <ul style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">AI 搜索</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">内容优化</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">抢占先机</li>
+                    </ul>
+                </div>
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">🚀</div>
+                    <h3>海外品牌推广与获客体系</h3>
+                    <div class="industry-card-en">Brand & Growth System</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">整合官网、SEO、SEM、社媒全域能力，构建可持续的海外获客增长引擎。</p>
+                    <ul style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">全渠道</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">陪跑式</li>
+                        <li style="padding:6px 14px; background:var(--gray-1); border-radius:100px; font-size:0.8rem; color:var(--gray-5);">可持续</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-header reveal">
+                <h2>不以流量为终点，以增长为目标</h2>
+                <p>流量只是开始。真正有价值的海外增长应该形成完整的增长闭环。</p>
+            </div>
+            <div class="philosophy-flow reveal">
+                <div class="philosophy-flow-item">品牌认知</div>
+                <span class="philosophy-flow-arrow">→</span>
+                <div class="philosophy-flow-item">网站承接</div>
+                <span class="philosophy-flow-arrow">→</span>
+                <div class="philosophy-flow-item">搜索获取</div>
+                <span class="philosophy-flow-arrow">→</span>
+                <div class="philosophy-flow-item">广告放大</div>
+                <span class="philosophy-flow-arrow">→</span>
+                <div class="philosophy-flow-item">询盘转化</div>
+                <span class="philosophy-flow-arrow">→</span>
+                <div class="philosophy-flow-item">客户沉淀</div>
+                <span class="philosophy-flow-arrow">→</span>
+                <div class="philosophy-flow-item">持续增长</div>
+            </div>
+            <div class="philosophy-compare reveal">
+                <div class="philosophy-side philosophy-side-left">
+                    <div class="philosophy-side-label">我们不仅关注</div>
+                    <ul>
+                        <li>有多少访问量</li>
+                        <li>有多少点击</li>
+                        <li>有多少曝光</li>
+                    </ul>
+                </div>
+                <div class="philosophy-compare-arrow">→</div>
+                <div class="philosophy-side philosophy-side-right">
+                    <div class="philosophy-side-label">我们更关注</div>
+                    <ul>
+                        <li>获得了多少精准询盘</li>
+                        <li>客户质量是否提升</li>
+                        <li>获客成本是否下降</li>
+                        <li>海外订单是否增长</li>
+                        <li>企业是否建立了品牌资产</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Change -->
+    <section class="market" id="market">
+        <div class="container">
+            <div class="market-header reveal">
+                <h2>全球获客正在发生变化</h2>
+                <p>Overseas Customer Acquisition Is Changing</p>
+            </div>
+            <div class="reveal" style="text-align:center; color:rgba(255,255,255,0.4); font-size:0.85rem; margin-bottom:16px; text-transform:uppercase; letter-spacing:0.1em;">
+                过去，企业主要依赖
+            </div>
+            <div class="market-old reveal">
+                <div class="market-old-item">展会</div>
+                <div class="market-old-item">代理商</div>
+                <div class="market-old-item">B2B平台</div>
+                <div class="market-old-item">传统贸易渠道</div>
+            </div>
+            <div class="market-transition reveal">
+                <div class="market-transition-text">从"寻找客户" 到 "被全球客户找到"</div>
+            </div>
+            <div class="market-grid">
+                <div class="market-card reveal">
+                    <div class="market-card-icon">🔍</div>
+                    <h4>Google Search</h4>
+                    <p>主动搜索产品与供应商</p>
+                </div>
+                <div class="market-card reveal">
+                    <div class="market-card-icon">🌐</div>
+                    <h4>Company Website</h4>
+                    <p>通过企业官网了解品牌与实力</p>
+                </div>
+                <div class="market-card reveal">
+                    <div class="market-card-icon">🤖</div>
+                    <h4>AI Search</h4>
+                    <p>通过ChatGPT、Google AI获取信息</p>
+                </div>
+                <div class="market-card reveal">
+                    <div class="market-card-icon">📱</div>
+                    <h4>Social Media</h4>
+                    <p>Facebook、TikTok、LinkedIn、VK</p>
+                </div>
+                <div class="market-card reveal">
+                    <div class="market-card-icon">🎯</div>
+                    <h4>Digital Ads</h4>
+                    <p>精准广告触达目标客户</p>
+                </div>
+            </div>
+            <div class="market-flow reveal">
+                Search → Website → Trust → Lead → <span>Customer</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems -->
+    <section class="problems" id="problems">
+        <div class="container">
+            <div class="problems-header reveal">
+                <h2>企业出海，真正难的不是做营销<br>而是建立增长系统</h2>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card reveal">
+                    <div class="problem-card-num">01</div>
+                    <h3>网站没有流量</h3>
+                    <p class="problem-card-desc">网站只是"展示产品"，没有形成稳定的自然流量来源。</p>
+                    <div class="problem-card-solution">
+                        <span class="problem-card-solution-badge">凌介</span>
+                        <p>建立 SEO 友好的全球化独立站，让网站成为企业长期海外流量资产。</p>
+                    </div>
+                </div>
+                <div class="problem-card reveal">
+                    <div class="problem-card-num">02</div>
+                    <h3>Google 没有排名</h3>
+                    <p class="problem-card-desc">目标客户正在搜索你的产品，却找不到你的企业。</p>
+                    <div class="problem-card-solution">
+                        <span class="problem-card-solution-badge">凌介</span>
+                        <p>通过 SEO、GEO、内容与技术优化，提高品牌在搜索与 AI 搜索中的可见度。</p>
+                    </div>
+                </div>
+                <div class="problem-card reveal">
+                    <div class="problem-card-num">03</div>
+                    <h3>广告成本越来越高</h3>
+                    <p class="problem-card-desc">广告投入不断增加，但有效询盘并没有同步增长。</p>
+                    <div class="problem-card-solution">
+                        <span class="problem-card-solution-badge">凌介</span>
+                        <p>通过关键词、受众、广告创意、落地页与转化数据持续优化，让预算更精准地流向高价值客户。</p>
+                    </div>
+                </div>
+                <div class="problem-card reveal">
+                    <div class="problem-card-num">04</div>
+                    <h3>海外客户无法沉淀</h3>
+                    <p class="problem-card-desc">询盘分散在 WhatsApp、邮箱、社交媒体等渠道，无法形成长期客户资产。</p>
+                    <div class="problem-card-solution">
+                        <span class="problem-card-solution-badge">凌介</span>
+                        <p>通过 CRM、邮件营销、WhatsApp 及再营销体系，将一次询盘转化为长期客户关系。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="problems-bottom reveal">
+                <div class="problems-bottom-item">
+                    <div class="problems-bottom-item-icon">🏗️</div>
+                    <h4>建体系</h4>
+                    <p>建立完整海外数字增长基础设施</p>
+                </div>
+                <div class="problems-bottom-item">
+                    <div class="problems-bottom-item-icon">📊</div>
+                    <h4>获流量</h4>
+                    <p>持续获取精准海外用户</p>
+                </div>
+                <div class="problems-bottom-item">
+                    <div class="problems-bottom-item-icon">💬</div>
+                    <h4>提询盘</h4>
+                    <p>提升有效询盘与客户转化</p>
+                </div>
+                <div class="problems-bottom-item">
+                    <div class="problems-bottom-item-icon">💎</div>
+                    <h4>沉资产</h4>
+                    <p>把流量和客户沉淀为企业长期品牌资产</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="industries" id="industries-exp" style="background: var(--gray-1);">
+        <div class="container">
+            <div class="industries-header reveal">
+                <h2>行业经验</h2>
+                <p>Growth Across Industries — 凌介服务于多个 B2B 与制造业领域，覆盖 30+ 行业。</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/industrial.jpg?v=3" alt="工业制造" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">⚙️</div>
+                        <h3>工业制造</h3>
+                        <div class="industry-card-en">Industrial Manufacturing</div>
+                        <ul>
+                            <li>机械设备</li>
+                            <li>工程机械</li>
+                            <li>汽车零部件</li>
+                            <li>自动化设备</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/hardware.jpg?v=3" alt="五金与建材" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">🔩</div>
+                        <h3>五金与建材</h3>
+                        <div class="industry-card-en">Hardware & Building Materials</div>
+                        <ul>
+                            <li>五金工具</li>
+                            <li>门窗</li>
+                            <li>建筑材料</li>
+                            <li>装饰材料</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/chemical.jpg?v=3" alt="化工与新材料" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">🧪</div>
+                        <h3>化工与新材料</h3>
+                        <div class="industry-card-en">Chemicals & Materials</div>
+                        <ul>
+                            <li>化工产品</li>
+                            <li>工业材料</li>
+                            <li>塑料橡胶</li>
+                            <li>功能材料</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/consumer.jpg?v=3" alt="轻工与消费品" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">📦</div>
+                        <h3>轻工与消费品</h3>
+                        <div class="industry-card-en">Consumer Goods</div>
+                        <ul>
+                            <li>包装</li>
+                            <li>一次性餐具</li>
+                            <li>家居用品</li>
+                            <li>日用产品</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/energy.jpg?v=3" alt="新能源" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">⚡</div>
+                        <h3>新能源</h3>
+                        <div class="industry-card-en">New Energy</div>
+                        <ul>
+                            <li>光伏</li>
+                            <li>储能</li>
+                            <li>电池</li>
+                            <li>新能源设备</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/medical.jpg?v=3" alt="医疗与科技" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">🏥</div>
+                        <h3>医疗与科技</h3>
+                        <div class="industry-card-en">Medical & Technology</div>
+                        <ul>
+                            <li>医疗器械</li>
+                            <li>科技产品</li>
+                            <li>专业设备</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/transport.jpg?v=3" alt="交通运输" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">🚗</div>
+                        <h3>交通运输</h3>
+                        <div class="industry-card-en">Transportation</div>
+                        <ul>
+                            <li>商用车</li>
+                            <li>轨道交通</li>
+                            <li>船舶配件</li>
+                            <li>无人机</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/electronics.jpg?v=3" alt="电子与通信" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">🌐</div>
+                        <h3>电子与通信</h3>
+                        <div class="industry-card-en">Electronics & Telecom</div>
+                        <ul>
+                            <li>电子元器件</li>
+                            <li>通信设备</li>
+                            <li>智能硬件</li>
+                            <li>安防监控</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img class="industry-card-img" src="industry-imgs/agriculture.jpg?v=3" alt="农业与食品" loading="lazy">
+                    <div class="industry-card-body">
+                        <div class="industry-card-icon">🌾</div>
+                        <h3>农业与食品</h3>
+                        <div class="industry-card-en">Agriculture & Food</div>
+                        <ul>
+                            <li>农机设备</li>
+                            <li>食品加工</li>
+                            <li>饲料添加剂</li>
+                            <li>农产品出口</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="industries" id="industries">
+        <div class="container">
+            <div class="industries-header reveal">
+                <h2>为什么选择我们？</h2>
+                <p>科技驱动，数据说话，陪跑式增长伙伴</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">🔗</div>
+                    <h3>全链路服务能力</h3>
+                    <div class="industry-card-en">Full-Funnel Service</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">从建站到推广，一站式解决各行业出海获客需求。</p>
+                </div>
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">📊</div>
+                    <h3>数据驱动增长</h3>
+                    <div class="industry-card-en">Data-Driven Growth</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">以产品思维、数据思维驱动决策，持续优化获客效果。</p>
+                </div>
+                <div class="industry-card reveal">
+                    <div class="industry-card-icon">🤝</div>
+                    <h3>陪跑式服务</h3>
+                    <div class="industry-card-en">Partnership Service</div>
+                    <p style="font-size:0.88rem; color:var(--gray-5); line-height:1.7;">不只是交付，更是长期增长伙伴，伴随企业出海全周期。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-text reveal">
+                    <h2>一支围绕增长<br>构建的团队</h2>
+                    <p>
+                        凌介核心团队拥有来自国内 985 高校的教育背景，并长期深耕数字营销、企业出海与全球增长领域。
+                    </p>
+                    <div class="team-unis">
+                        <span>复旦大学</span>
+                        <span>华中科技大学</span>
+                        <span>北京航空航天大学</span>
+                    </div>
+                    <p>
+                        我们由策略团队、网站团队、SEO 团队、广告团队、内容团队与数据团队共同协作。从战略规划到项目执行，从数据分析到持续优化，为客户提供完整的全球增长服务。
+                    </p>
+                    <div class="team-roles">
+                        <div class="team-role">策略团队</div>
+                        <div class="team-role">网站团队</div>
+                        <div class="team-role">SEO 团队</div>
+                        <div class="team-role">广告团队</div>
+                        <div class="team-role">内容团队</div>
+                        <div class="team-role">数据团队</div>
+                    </div>
+                </div>
+                <div class="team-visual reveal">
+                    <div class="team-visual-content">
+                        <div class="label">Team Structure</div>
+                        <div class="team-visual-grid">
+                            <div class="team-visual-grid-item">
+                                <div class="icon">🎯</div>
+                                <div class="name">策略</div>
+                            </div>
+                            <div class="team-visual-grid-item">
+                                <div class="icon">🌐</div>
+                                <div class="name">网站</div>
+                            </div>
+                            <div class="team-visual-grid-item">
+                                <div class="icon">🔍</div>
+                                <div class="name">SEO</div>
+                            </div>
+                            <div class="team-visual-grid-item">
+                                <div class="icon">📊</div>
+                                <div class="name">广告</div>
+                            </div>
+                            <div class="team-visual-grid-item">
+                                <div class="icon">✍️</div>
+                                <div class="name">内容</div>
+                            </div>
+                            <div class="team-visual-grid-item">
+                                <div class="icon">📈</div>
+                                <div class="name">数据</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="reveal">
+                <div class="contact-tag">
+                    <div class="hero-badge-dot"></div>
+                    Start Your Global Growth
+                </div>
+                <h2>开启<span class="gradient-text">全球增长</span></h2>
+                <p>
+                    你的产品已经准备好走向全球。下一步，是建立一套真正能够持续获得海外客户的增长体系。
+                </p>
+                <div class="hero-actions">
+                    <a href="mailto:lee2024ocean@gmail.com" class="btn-primary">
+                        获取免费海外增长诊断 →
+                    </a>
+                </div>
+            </div>
+            <div class="contact-info reveal">
+                <div class="contact-info-item">
+                    <div class="icon">📧</div>
+                    <div class="label">Email / Tel</div>
+                    <div class="value">
+                        <a href="mailto:lee2024ocean@gmail.com">lee2024ocean@gmail.com</a>
+                        <span class="contact-value-divider"></span>
+                        <a href="tel:+8615618181205">+86 156 1818 1205</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon">💬</div>
+                    <div class="label">WeChat</div>
+                    <div class="value contact-qr-wrap">
+                        <img class="contact-qr" src="contact-qr.jpg?v=2" alt="微信二维码">
+                        <span class="contact-qr-hint">扫码添加微信</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-services reveal">
+                <span>网站建设</span>
+                <span>SEO / GEO</span>
+                <span>Google Ads</span>
+                <span>Bing Ads</span>
+                <span>Yandex Ads</span>
+                <span>海外社媒广告</span>
+                <span>品牌推广</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <div class="nav-logo-mark"><img src="L&J.png" alt="凌介科技 Lynjex"></div>
+                        <div class="nav-logo-text">
+                            凌介科技
+                            <small>LYNJEX · GLOBAL GROWTH PARTNER</small>
+                        </div>
+                    </div>
+                    <p>凌越边界，连接全球。凌介科技专注于 To B 企业全球增长，帮助中国企业建立真正属于自己的全球增长体系。</p>
+                    <div class="tagline">让增长连接全球</div>
+                </div>
+                <div class="footer-col">
+                    <h4>服务</h4>
+                    <ul>
+                        <li><a href="#industries">全球化独立站</a></li>
+                        <li><a href="#industries">SEO / GEO</a></li>
+                        <li><a href="#industries">搜索广告</a></li>
+                        <li><a href="#industries">社媒广告</a></li>
+                        <li><a href="#industries">AI 增长</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>公司</h4>
+                    <ul>
+                        <li><a href="#services-new">产品服务</a></li>
+                        <li><a href="#industries-exp">行业经验</a></li>
+                        <li><a href="#industries">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系</h4>
+                    <ul>
+                        <li><a href="mailto:lee2024ocean@gmail.com">lee2024ocean@gmail.com</a></li>
+                        <li><a href="tel:+8615618181205">+86 156 1818 1205</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 凌介科技 Lynjex. All Rights Reserved.</p>
+                <div class="footer-bottom-right">Global Growth Partner</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+    <script>
+        // ===== Nav scroll effect =====
+        const nav = document.getElementById('nav');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const backTop = document.getElementById('backTop');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+
+            if (scrollTop > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            scrollProgress.style.width = scrollPercent + '%';
+
+            if (scrollTop > 600) {
+                backTop.classList.add('show');
+            } else {
+                backTop.classList.remove('show');
+            }
+        });
+
+        // ===== Back to top =====
+        backTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== Mobile nav toggle =====
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ===== Scroll reveal =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Add slight stagger for grouped elements
+                    const siblings = entry.target.parentElement?.querySelectorAll('.reveal');
+                    if (siblings) {
+                        const idx = Array.from(siblings).indexOf(entry.target);
+                        setTimeout(() => {
+                            entry.target.classList.add('active');
+                        }, Math.min(idx * 80, 400));
+                    } else {
+                        entry.target.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ===== Count up animation =====
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.count);
+                    const duration = 2000;
+                    const start = performance.now();
+
+                    function update(now) {
+                        const elapsed = now - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.floor(eased * target);
+                        el.textContent = current + '+';
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        } else {
+                            el.textContent = target + '+';
+                        }
+                    }
+                    requestAnimationFrame(update);
+                    countObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+        // ===== Smooth scroll for anchor links =====
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href === '#' || href.length < 2) return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 72;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
