@@ -1953,6 +1953,83 @@
                 right: 20px;
             }
         }
+
+        /* ========== Mobile usability refinements ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .nav-logo-text small {
+                font-size: 0.55rem;
+                letter-spacing: 0.03em;
+            }
+
+            .nav-toggle {
+                min-width: 44px;
+                min-height: 44px;
+                align-items: center;
+                justify-content: center;
+                margin-right: -8px;
+            }
+
+            .nav-menu {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .nav-menu a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            .philosophy-side,
+            .problem-card,
+            .service-card,
+            .industry-card,
+            .mission-card {
+                padding: 24px 20px;
+            }
+
+            .industry-card-img {
+                width: calc(100% + 40px);
+                margin: -24px -20px 0;
+            }
+
+            .contact-info {
+                gap: 16px;
+            }
+
+            .contact-info-item {
+                width: min(100%, 280px);
+                min-height: 0;
+                padding: 28px 20px;
+                box-sizing: border-box;
+            }
+
+            .back-top {
+                width: 52px;
+                height: 52px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body>
